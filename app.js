@@ -4,7 +4,8 @@ const path = require("path");
 require("dotenv").config();
 const http = require("http");
 const { Server } = require("socket.io");
-
+const estadisticasRoutes = require("./routes/estadisticas");
+const restaurantRoutes = require("./routes/restaurants");
 const app = express();
 
 const iniciarJobSuscripciones = require("./jobs/suscripciones");
@@ -22,7 +23,8 @@ app.set("io", io);
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static("public"));
-
+app.use("/estadisticas", estadisticasRoutes);
+app.use("/api/restaurants", restaurantRoutes);
 app.use("/api", apiRoutes);
 
 app.get("/", (req, res) => {

@@ -6,6 +6,15 @@ nombreRestaurante: { type: String, required: true },
 correo: { type: String, required: true },
 usuarioAdmin: { type: String, required: true, unique: true },
 passwordAdmin: { type: String, required: true },
+logoUrl: {
+  type: String,
+  default: ""
+},
+
+primaryColor: {
+  type: String,
+  default: "#ff6600"
+},
 
 // 🔹 PLAN
 plan: { type: String, default: "mensual" },
@@ -34,6 +43,16 @@ wompiPublicKey: { type: String, default: "" },
 WOMPI_PRIVATE_KEY: { type: String, default: "" },
 paymentSourceId: {type: String, default: "" },
 customerEmailWompi: {type: String, default: "" },
+logoUrl: {
+  type: String,
+  default: ""
+},
+
+primaryColor: {
+  type: String,
+  default: "#ff6600"
+},
+
 
 }, { timestamps: true });
 
